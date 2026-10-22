@@ -46,7 +46,7 @@ async function makeGraph(root: string | undefined, graphpath: string, dirname: s
     }
     const files = await vscode.workspace.fs.readDirectory(vscode.Uri.file(root));
     for (let i = 0; i < files.length; i++) {
-        if (isIgnore(files[i][0]) && files[i][1] === 2) {
+        if (isIgnore(files[i][0])) {
             continue;
         }
         if (files[i][1] === 1) {
