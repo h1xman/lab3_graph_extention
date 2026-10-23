@@ -9,13 +9,13 @@ const Ignore = [/build/, /\..*/];
 
 function isIgnore(name: string): boolean {
     /*
-    This function decides either ignore given path or not
+    Эта функция решает, игнорировать ли данный путь или нет.
 
-    Args:
-        name (string) - the name of file or directory
+    Аргументы:
+        name (string) - имя файла или директории.
 
-    Returns:
-        is_ignored (boolean) - true if file will be ignored and false if not
+    Возвращаемое значение:
+        is_ignored (boolean) - true если файл игнорируется и false если нет
     
     */
 
@@ -29,16 +29,16 @@ function isIgnore(name: string): boolean {
 
 async function makeGraph(root: string | undefined, graphpath: string, dirname: string | undefined) {
     /*
-    This function recursively scans the project and if file or directory shouldn't be ignored 
-    adds file or directory to graph.
+    Эта функция рекурсивно сканирует проект и, если файл или директория не должны игнорироваться,
+добавляет файл или директорию в граф.
     
-    Args:
-        root (string | undefined) - full path to the current parent (root) dir.
-        graphpath (string) -  full path to the graph.md.
-        diranme (string | undefined) - name of the current parent (root) dir.
+    Аргументы:
+        root (string | undefined) - полный путь к родительской директории
+        graphpath (string) -  полный путь к файлу графа
+        diranme (string | undefined) - имя родительской директории
 
-    Returns:
-        Promise<void> - promise wich resolves after successful writen in the file.
+    Возвращаемое значение:
+        Promise<void> - промис, который считывается после успешного завершения функции
     */
 
     if (!root) {
@@ -65,10 +65,10 @@ async function makeGraph(root: string | undefined, graphpath: string, dirname: s
 
 export function activate(context: vscode.ExtensionContext) {
     /*
-    Activates VC Code extention and registers the graph generation command.
+    Активирует расширение и регистрирует команду генерации графа. 
     
-    Args:
-        context - the extention context provided by VC Code
+    Аргументы:
+        context - контекст расширений VS
 
     */
 
@@ -101,7 +101,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 export function deactivate() {
     /*
-    Deactivates VC Code extention and registers the graph generation command.
+    Деактивирует расширение.
     */
 
     console.log('Расширение "graph-extension" деактивировано');
